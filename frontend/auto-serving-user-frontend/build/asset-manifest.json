@@ -1,0 +1,29 @@
+{
+  "files": {
+    "main.css": "./static/css/main.282cbb40.chunk.css",
+    "main.js": "./static/js/main.1d709b84.chunk.js",
+    "main.js.map": "./static/js/main.1d709b84.chunk.js.map",
+    "runtime-main.js": "./static/js/runtime-main.abb806cb.js",
+    "runtime-main.js.map": "./static/js/runtime-main.abb806cb.js.map",
+    "static/css/2.4cfc8ab4.chunk.css": "./static/css/2.4cfc8ab4.chunk.css",
+    "static/js/2.dbe4e465.chunk.js": "./static/js/2.dbe4e465.chunk.js",
+    "static/js/2.dbe4e465.chunk.js.map": "./static/js/2.dbe4e465.chunk.js.map",
+    "index.html": "./index.html",
+    "precache-manifest.be8d8e8a61123fb8c4553ef69dc8f62c.js": "./precache-manifest.be8d8e8a61123fb8c4553ef69dc8f62c.js",
+    "service-worker.js": "./service-worker.js",
+    "static/css/2.4cfc8ab4.chunk.css.map": "./static/css/2.4cfc8ab4.chunk.css.map",
+    "static/css/main.282cbb40.chunk.css.map": "./static/css/main.282cbb40.chunk.css.map",
+    "static/media/flaticon.css": "./static/media/Flaticon2.eafcbac0.ttf",
+    "static/media/ki.css": "./static/media/Ki.b5ba82a8.svg",
+    "static/media/index.scss": "./static/media/Linearicons-Free.b9b7f23c.eot",
+    "static/media/all.min.css": "./static/media/fa-solid-900.ec763292.svg",
+    "static/media/socicon.css": "./static/media/socicon.a35b6574.svg"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.abb806cb.js",
+    "static/css/2.4cfc8ab4.chunk.css",
+    "static/js/2.dbe4e465.chunk.js",
+    "static/css/main.282cbb40.chunk.css",
+    "static/js/main.1d709b84.chunk.js"
+  ]
+}
