@@ -1,0 +1,36 @@
+export MYSQL_HOSTNAME=localhost
+export MYSQL_USERNAME=root
+export MYSQL_PASS=Root@123
+export MYSQL_PORT=3306
+export MYSQL_DB_NAME=mpl-auto-serving-prod
+
+export MONGO_HOST=192.168.11.97
+export MONGO_PORT=27017
+export MONGO_USER=
+export MONGO_PASS=
+export MONGO_AUTH_DB_NAME=auto-serving-results
+export MONGO_DB_NAME=auto-serving-results-mpl
+export MONGO_COLL_NAME=results
+
+export S3_BUCKET_NAME=tusker-baps-video-bucket
+
+export PROJECT_ENV=development
+
+export ROI_API_ENDPOINT=https://dev.asapi.tusker.ai/api/v1/get_camera_roi_by_user_id
+
+export USER_ID_CV2='[1]'
+export NOTIFICATION_USER_CONFIG='{"9":{"Email":"dhairya.softvan@gmail.com,soham.softvan@gmail.com"}}'
+export MYSQL_POOL_SIZE=20
+export MYSQL_MAX_OVERFLOW=30
+export MYSQL_POOL_TIMEOUT=60
+export MYSQL_POOL_PRE_PING=True
+export MYSQL_POOL_RECYCLE=28800
+export RTSP_ODIT_COMPANY_ID='["1"]'
+export NOTIFICATION_COMPANY_ID='[]'
+export MESSAGE_COMPANY_ID='[]'
+export ALLOWED_ORIGINS='["*"]'
+export ALLOWED_METHODS='["GET", "POST"]'
+export ALLOWED_HEARDERS='["Authorization", "Content-Type"]'
+export NVR_DETAILS='{}'
+export DOWNLOAD_FILE_BASE_DIR='/home/dev7/Pictures/images'
+export IMAGE_BASE_URL='http://localhost/images'

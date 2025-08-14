@@ -1,0 +1,66 @@
+version: '3.3'
+
+services:
+  mysql:
+    image: mysql:5.7
+    container_name: mysql_container
+    ports:
+      - "3306:3306"
+    volumes:
+      - mysql_database:/var/lib/mysql
+    environment:
+      MYSQL_ROOT_PASSWORD: Root@123
+      MYSQL_DATABASE: mpl-auto-serving
+      MYSQL_USER: root
+      MYSQL_PASSWORD: Root@123
+    restart: always
+  mongodb:
+    image: mongo:4.4
+    container_name: mongodb_container
+    ports:
+      - "27017:27017"
+    volumes:
+      - mongodb_database:/data/db
+    environment:
+      MONGO_INITDB_ROOT_USERNAME: root
+      MONGO_INITDB_ROOT_PASSWORD: Root@123
+    restart: always
+  mpl-auto-serving-api:
+    image: 437476783934.dkr.ecr.ap-south-1.amazonaws.com/tusker-mpl-gen-model:backend
+    ports:
+      - 8000:80
+    volumes:
+      - auto-serving-application-logs:/logs
+    environment:
+      MYSQL_HOSTNAME: mysql
+      MYSQL_PORT: 3306
+      MYSQL_DB_NAME: auto-serving
+      MYSQL_USERNAME: root
+      MYSQL_PASS: Root@123
+      MONGO_HOST: mongodb
+      MONGO_PORT: 27017
+      MONGO_DB_NAME: auto-serving-result
+      MONGO_USER: root
+      MONGO_PASS: Root@123
+      MONGO_AUTH_DB_NAME: ""
+      MONGO_COLL_NAME: results
+      ROI_API_ENDPOINT: demo
+    depends_on:
+      - mysql
+      - mongodb
+    restart: always
+  mpl-auto-serving-ui:
+    image: 437476783934.dkr.ecr.ap-south-1.amazonaws.com/tusker-mpl-gen-model:frontend
+    ports:
+      - 8080:80
+    environment:
+      REACT_APP_ENV: ${FRONTEND_APP_ENVIRONMENT}
+      REACT_APP_IP: ${AUTO_SERVING_API_IP}
+      REACT_APP_API_HOST: ${AUTO_SERVING_API_HOST}
+    restart: always
+    depends_on:
+      - mpl-auto-serving-api
+volumes:
+  auto-serving-application-logs:
+  mysql_database:
+  mongodb_database:
