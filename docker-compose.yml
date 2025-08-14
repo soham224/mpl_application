@@ -1,0 +1,73 @@
+version: '3.3'
+
+services:
+  mysql:
+    image: mysql:5.7
+    container_name: mysql_container
+    restart: unless-stopped
+    ports:
+      - "3306:3306"
+    volumes:
+      - mysql_database:/var/lib/mysql
+    environment:
+      MYSQL_ROOT_PASSWORD: Root@123
+      MYSQL_DATABASE: auto-serving
+      MYSQL_USER: mpl_sql_usr
+      MYSQL_PASSWORD: mpl_sql@123
+
+  mongodb:
+    image: mongo:4.4
+    container_name: mongodb_container
+    restart: unless-stopped
+    ports:
+      - "27017:27017"
+    volumes:
+      - mongodb_database:/data/db
+    environment:
+      MONGO_INITDB_ROOT_USERNAME: root
+      MONGO_INITDB_ROOT_PASSWORD: Root@123
+      MONGO_INITDB_DATABASE: auto-serving-result
+
+  mpl-auto-serving-api:
+    image: 437476783934.dkr.ecr.ap-south-1.amazonaws.com/tusker-mpl-gen-model:backend
+    restart: unless-stopped
+    ports:
+      - "8000:80"
+    volumes:
+      - auto-serving-application-logs:/logs
+      - /home/mpl/Pictures/images:/images
+    environment:
+      MYSQL_HOSTNAME: mysql
+      MYSQL_PORT: 3306
+      MYSQL_DB_NAME: auto-serving
+      MYSQL_USERNAME: mpl_sql_usr
+      MYSQL_PASS: mpl_sql@123
+      MONGO_HOST: mongodb
+      MONGO_PORT: 27017
+      MONGO_DB_NAME: auto-serving-result
+      MONGO_USER: root
+      MONGO_PASS: Root@123
+      MONGO_AUTH_DB_NAME: ""
+      MONGO_COLL_NAME: results
+      ROI_API_ENDPOINT: demo
+      NVR_DETAILS: '{}'
+      IMAGE_BASE_URL: http://192.168.2.24
+      DOWNLOAD_FILE_BASE_DIR: images
+    depends_on:
+      - mysql
+      - mongodb
+
+  mpl-auto-serving-ui:
+    image: 437476783934.dkr.ecr.ap-south-1.amazonaws.com/tusker-mpl-gen-model:frontend
+    restart: unless-stopped
+    ports:
+      - "8080:80"
+    environment:
+      REACT_APP_ENV: ${FRONTEND_APP_ENVIRONMENT}
+      REACT_APP_IP: ${AUTO_SERVING_API_IP}
+      REACT_APP_API_HOST: ${AUTO_SERVING_API_HOST}
+
+volumes:
+  auto-serving-application-logs:
+  mysql_database:
+  mongodb_database:
