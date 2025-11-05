@@ -386,7 +386,7 @@ const FetchViolationModal = ({tableDatas ,showBarTableData ,handleCloseModal }) 
                                         </tr>
                                         <tr>
                                             <td><b>Speed:</b></td>
-                                            <td style={{ color: tableDatas[currentFrameIndex]?.speed >= 30 ? "red" : "" }}>
+                                            <td style={{ color: tableDatas[currentFrameIndex]?.speed >= 31 ? "red" : "" }}>
                                                 {tableDatas[currentFrameIndex]?.speed}
                                             </td>
                                         </tr>
@@ -441,7 +441,7 @@ const FetchViolationModal = ({tableDatas ,showBarTableData ,handleCloseModal }) 
                                             </tr>
                                             <tr>
                                                 <td><b>Speed:</b></td>
-                                                <td style={{ color: tableDatas[currentFrameIndex]?.speed >= 30 ? "red" : "" }}>{tableDatas[currentFrameIndex]?.speed}</td>
+                                                <td style={{ color: tableDatas[currentFrameIndex]?.speed >= 31 ? "red" : "" }}>{tableDatas[currentFrameIndex]?.speed}</td>
                                             </tr>
                                             </tbody>
                                         </Table>

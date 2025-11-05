@@ -18,7 +18,7 @@ import { connect, useDispatch } from "react-redux";
 */
 
 const initialValues = {
-  email: "mihir.softvan@gmail.com",
+  email: "soham.softvan@gmail.com",
   password: "",
 };
 

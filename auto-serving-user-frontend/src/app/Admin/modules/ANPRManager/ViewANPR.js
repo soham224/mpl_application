@@ -124,12 +124,12 @@ export default function AnprManagerViolation() {
         },
         {
             dataField: "camera_name",
-            text: "Camera Name",
+            text: "Camera",
             formatter: (cell, row) => <span>{row?.camera_details?.camera_name}</span>
         },
         {
             dataField: "direction",
-            text: "Direction",
+            text: "Dir",
             formatter: (cell, row) => <span>{row?.direction}</span>
         },
         {
@@ -139,7 +139,7 @@ export default function AnprManagerViolation() {
         },
         {
             dataField: "plate_image",
-            text: "Plate Image",
+            text: "Plate Img",
             formatter: (cell, row) => (
                 <img src={row?.plate_image_url} alt="plate" width="100px" height="40px"/>
             )
@@ -151,28 +151,38 @@ export default function AnprManagerViolation() {
         },
         {
             dataField: "speed",
-            text: "Vehicle Speed",
+            text: "Speed",
             formatter: (cell, row) => (
                 <span style={{
-                    color: row?.speed >= 30 ? "red" : "black",
-                    fontWeight: row?.speed >= 30 ? "bold" : "normal"
+                    color: row?.speed >= 31 ? "red" : "black",
+                    fontWeight: row?.speed >= 31 ? "bold" : "normal"
                 }}>
                     {row?.speed}
         </span>
             )
         },
 
-        {
-            dataField: "direction",
-            text: "Direction",
-            formatter: (cell, row) => <span>
-                {row?.direction}
-            </span>
-        },
+        // {
+        //     dataField: "direction",
+        //     text: "Direction",
+        //     formatter: (cell, row) => <span>
+        //         {row?.direction}
+        //     </span>
+        // },
         {
             dataField: "vehicle_color",
             text: "Vehicle Color",
             formatter: (cell, row) => <span>{row?.vehicle_color}</span>
+        },
+        {
+            dataField: "owner_name",
+            text: "Owner",
+            formatter: (cell, row) => <span>{row?.owner_name}</span>
+        },
+        {
+            dataField: "vehicle_identified",
+            text: "Identified",
+            formatter: (cell, row) => <span>{row?.vehicle_identified}</span>
         },
         {
             dataField: "vehicle_type",
@@ -181,7 +191,7 @@ export default function AnprManagerViolation() {
         },
         {
             dataField: "created_date",
-            text: "Created Date",
+            text: "Date",
             formatter: (cell, row) =>
                 moment(row?.time_msec)
                     .tz("Asia/Kolkata") // Convert to IST
@@ -190,13 +200,13 @@ export default function AnprManagerViolation() {
         },
         {
             dataField: "violation_pic",
-            text: "Violation Pic",
+            text: "View",
             formatter: (cell, row) => (
                 <span className="svg-icon svg-icon-md svg-icon-light-inverse d-flex justify-content-center align-items-center">
             <VisibilityIcon
                 style={{
                     fontSize: "2rem",
-                    color: row?.speed >= 30 ? "red" : "#147b82",
+                    color: row?.speed >= 31 ? "red" : "#147b82",
                     cursor: "pointer",
                 }}
                 onClick={() => handleClickModal(row)}
@@ -561,7 +571,7 @@ export default function AnprManagerViolation() {
 }
 
 export const speedFilterOptions = [
-    {label: "30 or More", value: "above_30"},
+    {label: "31 or More", value: "above_31"},
     {label: "All Speeds", value: "all"},
     {label: "Below 30", value: "below_30"},
 ];

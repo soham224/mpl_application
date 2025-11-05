@@ -108,7 +108,7 @@ export function ViewImageModal({
                                     <tr>
                                         <td><b>Speed:</b></td>
                                         <td
-                                            style={{ color:speed >= 30 ? "red" : "" }}
+                                            style={{ color:speed >= 31 ? "red" : "" }}
                                         >{speed}</td>
                                     </tr>
                                     <tr>
@@ -158,7 +158,7 @@ export function ViewImageModal({
                                         </tr>
                                         <tr>
                                             <td><b>Speed:</b></td>
-                                            <td  style={{ color: speed >= 30 ? "red" : "" }}>{speed}</td>
+                                            <td  style={{ color: speed >= 31 ? "red" : "" }}>{speed}</td>
                                         </tr>
                                         </tbody>
                                     </Table>
