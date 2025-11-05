@@ -512,7 +512,7 @@ def get_popup_data(
     start_date += timedelta(hours=5, minutes=30)
     end_data += timedelta(hours=5, minutes=30)
     anpr_details = crud.anpr_vms_details_crud_obj.get_anpr_details_pop_up(
-        db=db, start_date=start_date, end_date=end_data, speed=30
+        db=db, start_date=start_date, end_date=end_data, speed=31
     )
     anpr_details_list = []
 

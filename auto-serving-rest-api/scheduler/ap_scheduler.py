@@ -449,7 +449,7 @@ def send_notification(company_id):
         if not last_date_id_config.get(
                 (company_id, notification_scheduler_type, "SQL")
         ):
-            data = get_one_anpr_details_pdf(30)
+            data = get_one_anpr_details_pdf(31)
             if data:
                 last_date_id_config[company_id, notification_scheduler_type, "SQL"] = (
                     data.id
@@ -464,7 +464,7 @@ def send_notification(company_id):
             sql_data = []
         else:
             sql_data = get_anpr_details_pdf(
-                30,
+                31,
                 last_date_id_config[company_id, notification_scheduler_type, "SQL"],
             )
         if sql_data:

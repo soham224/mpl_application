@@ -573,7 +573,7 @@ export default function AnprManagerViolation() {
 export const speedFilterOptions = [
     {label: "31 or More", value: "above_31"},
     {label: "All Speeds", value: "all"},
-    {label: "Below 30", value: "below_30"},
+    {label: "Below 31", value: "below_31"},
 ];
 
 

@@ -26,10 +26,10 @@ class CRUDAnprVmsDetails(CRUDBase[AnprVmsDetails, AnprVmsDetails, AnprVmsDetails
         if nvr_details.search:
             query = query.filter(AnprVmsDetails.plate.ilike(f"%{nvr_details.search}%"))
 
-        if nvr_details.speed == "below_30":
-            query = query.filter(AnprVmsDetails.speed < 30)
-        elif nvr_details.speed == "above_30":
-            query = query.filter(AnprVmsDetails.speed >= 30)
+        if nvr_details.speed == "below_31":
+            query = query.filter(AnprVmsDetails.speed < 31)
+        elif nvr_details.speed == "above_31":
+            query = query.filter(AnprVmsDetails.speed >= 31)
         if nvr_details.start_date and nvr_details.end_date:
             query = query.filter(
                 AnprVmsDetails.time_msec.between(

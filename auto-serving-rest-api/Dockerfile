@@ -1,5 +1,4 @@
 FROM python:3.8-slim-bullseye
-MAINTAINER Mihir Rajput
 
 # db config
 ENV MYSQL_HOSTNAME ""
