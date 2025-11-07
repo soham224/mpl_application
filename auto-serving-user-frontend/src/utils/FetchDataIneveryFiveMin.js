@@ -16,7 +16,7 @@ export const fetchData = async (dispatch, isAuthorized, user) => {
 
     const data = {
         time_period: 3,
-        label_list: ["vehicle_stoppage", "traffic_congestions"],
+        label_list: ["vehicle_stoppage", "traffic_congestions", "no_helmet"],
     };
 
     try {
